@@ -25,6 +25,7 @@ function buscarTiempo(busqueda) {
 
 function init(resultado) {
 
+  console.log(resultado);
   document.getElementById('pagina').style="display:flex";
 
   switch (resultado.weather[0].main) {
@@ -65,7 +66,7 @@ function init(resultado) {
   tiempo.innerText = aux.charAt(0).toUpperCase() + aux.slice(1);
   iconoTiempo.src = 'icons/' + resultado.weather[0].icon + '.png';
 
-  temperaturaTiempo.innerText = 'Temperatura ' + Math.floor(resultado.main.temp)/10  + 'ºC'
+  temperaturaTiempo.innerText = 'Temperatura ' + Math.floor(resultado.main.temp-273.15)  + 'ºC'
 
   ciudadTiempo.innerText = 'Ciudad ' + resultado.name;
   vientoTiempo.innerText = 'Viento ' + resultado.wind.speed + 'm/s';
