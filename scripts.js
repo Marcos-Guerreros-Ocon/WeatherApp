@@ -63,10 +63,9 @@ function init(resultado) {
 
   let aux = resultado.weather[0].description;
   tiempo.innerText = aux.charAt(0).toUpperCase() + aux.slice(1);
+  iconoTiempo.src = 'icons/' + resultado.weather[0].icon + '.png';
 
-  iconoTiempo.src = 'https://openweathermap.org/img/w/' + resultado.weather[0].icon + '.png';
-
-  temperaturaTiempo.innerText = 'Temperatura' + Math.floor(resultado.main.temp)/10  + 'ºC'
+  temperaturaTiempo.innerText = 'Temperatura ' + Math.floor(resultado.main.temp)/10  + 'ºC'
 
   ciudadTiempo.innerText = 'Ciudad ' + resultado.name;
   vientoTiempo.innerText = 'Viento ' + resultado.wind.speed + 'm/s';
